@@ -16,7 +16,7 @@ module.exports = {
         'big': '64vw',
       },
       height: {
-        'big': '50vw',
+        'big': '50vh',
       }
     },
   },

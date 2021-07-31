@@ -21,13 +21,13 @@ function App() {
   }, [personNb, selected, bill]);
 
   return (
-    <div className="flex flex-col w-full h-screen bg-LightGrayishCyan1 overflow-hidden">
-      <div className="flex flex-col w-full h-full lg:m-auto">
-        <div className=" m-auto mt-10 lg:-mt-10">
+    <div className="flex flex-col w-full h-full min-h-screen bg-LightGrayishCyan1 overflow-hidden">
+      <div className="flex flex-col w-full h-full md:m-auto">
+        <div className="m-auto mt-10 lg:-mt-10">
           <img src={logo} className="" alt="logo" />
         </div>
-        <div className="flex flex-col lg:flex-row w-full lg:w-big h-full lg:h-big m-auto mt-10 bg-White rounded-t-3xl lg:rounded-3xl">
-          <div className="w-full lg:w-1/2 h-3/6 lg:h-full px-7 py-4 lg:p-7">
+        <div className="flex flex-col lg:flex-row w-full h-full lg:w-big lg:h-big m-auto mt-10 bg-White rounded-t-3xl lg:rounded-3xl">
+          <div className="w-full lg:w-1/2 lg:h-full px-7 py-4 md:p-10 lg:p-7">
             <div className="flex flex-col w-full h-full">
               <div className="w-full lg:m-auto">
                 <p className="font-extrabold text-DarkGrayishCyan1 mb-1 lg:mb-3">
@@ -36,11 +36,11 @@ function App() {
                 <Input value={bill} onChange={(e) => setBill(e.target.value)} />
               </div>
 
-              <div className="w-full mt-3 lg:m-auto">
+              <div className="w-full mt-3 md:mt-10 lg:m-auto">
                 <p className="font-extrabold text-DarkGrayishCyan1 mb-3">
                   Select Tip %
                 </p>
-                <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-2 lg:grid-rows-3 gap-3">
+                <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-3">
                   <div
                     onClick={() => {
                       setShow(false);
@@ -120,7 +120,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="w-full mt-3 lg:m-auto">
+              <div className="w-full mt-3 md:mt-10 lg:m-auto">
                 <p className="font-extrabold text-DarkGrayishCyan1 mb-3">
                   Number of People
                 </p>
@@ -131,10 +131,10 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 h-2/6 lg:h-full px-7 py-4 lg:p-7">
+          <div className="w-full lg:w-1/2 lg:h-full px-7 py-4 md:p-10 lg:p-7">
             <div
               className="flex flex-col w-full h-full bg-VeryDarkCyan
-              rounded-3xl p-5 lg:p-10"
+              rounded-3xl px-5 py-10 lg:p-10"
             >
               <div className="flex flex-col w-full h-full text-White">
                 <div className="flex">
@@ -151,7 +151,7 @@ function App() {
                     </span>
                   </div>
                 </div>
-                <div className="flex mt-4 lg:mt-10">
+                <div className="flex mt-4 md:mt-10">
                   <div>
                     <p>Total</p>
                     <p className="text-DarkGrayishCyan2">/ person</p>
@@ -174,7 +174,7 @@ function App() {
                     setTipAmount(parseFloat(0).toFixed(2));
                     setTotal(parseFloat(0).toFixed(2));
                   }}
-                  className={`mb-0 mt-auto w-full py-3 bg-StrongCyan
+                  className={`mt-5 lg:mb-0 lg:mt-auto w-full py-3 bg-StrongCyan
                   text-lg font-extrabold rounded-lg ${
                     bill && selected ? "opacity-100" : "opacity-30"
                   }`}
