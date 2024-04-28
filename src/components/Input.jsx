@@ -5,8 +5,8 @@ const Input = ({ onChange, value }) => {
     <input
       onChange={onChange}
       value={value ? value : ""}
-      className="w-full bg-LightGrayishCyan2 text-2xl font-extrabold
-        rounded-lg px-4 py-2 text-right text-VeryDarkCyan transition-all
+      className="w-full bg-LightGrayishCyan2 text-xl font-extrabold
+        rounded-lg px-4 py-1 text-right text-VeryDarkCyan transition-all
         duration-150 ease-linear outline-none focus:ring-2 ring-VeryDarkCyan"
     />
   );

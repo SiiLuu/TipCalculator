@@ -10,13 +10,19 @@ function App() {
   const [bill, setBill] = useState(null);
   const [personNb, setPersonNb] = useState(1);
   const [tipAmount, setTipAmount] = useState(parseFloat(0).toFixed(2));
+  const [billAmount, setbillAmount] = useState(parseFloat(0).toFixed(2));
   const [total, setTotal] = useState(parseFloat(0).toFixed(2));
 
   useEffect(() => {
     if (personNb && selected && bill) {
       const amountTip = (bill * selected) / 100;
       setTipAmount(parseFloat(amountTip / personNb).toFixed(2));
-      setTotal(parseFloat((bill - amountTip) / personNb).toFixed(2));
+      setbillAmount(parseFloat(bill / personNb).toFixed(2));
+      setTotal(
+        (
+          parseFloat(amountTip / personNb) + parseFloat(bill / personNb)
+        ).toFixed(2)
+      );
     }
   }, [personNb, selected, bill]);
 
@@ -144,21 +150,35 @@ function App() {
                   </div>
                   <div className="flex mr-0 ml-auto">
                     <span
-                      className="m-auto text-4xl font-extrabold
+                      className="m-auto text-3xl font-extrabold
                       text-StrongCyan"
                     >
                       ${tipAmount}
                     </span>
                   </div>
                 </div>
-                <div className="flex mt-4 md:mt-10">
+                <div className="flex mt-4 md:mt-6">
+                  <div>
+                    <p>Bill amout</p>
+                    <p className="text-DarkGrayishCyan2">/ person</p>
+                  </div>
+                  <div className="flex mr-0 ml-auto">
+                    <span
+                      className="m-auto text-3xl font-extrabold
+                      text-StrongCyan"
+                    >
+                      ${billAmount}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex mt-4 md:mt-6">
                   <div>
                     <p>Total</p>
                     <p className="text-DarkGrayishCyan2">/ person</p>
                   </div>
                   <div className="flex mr-0 ml-auto">
                     <span
-                      className="m-auto text-4xl font-extrabold
+                      className="m-auto text-3xl font-extrabold
                       text-StrongCyan"
                     >
                       ${total}
